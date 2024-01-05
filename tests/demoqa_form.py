@@ -4,7 +4,10 @@ import os
 
 def test_demoqa_form():
 
-    browser.open('https://demoqa.com/automation-practice-form').element('#firstName').type('firstName')
+    browser.open('https://demoqa.com/automation-practice-form')
+    browser.driver.execute_script("document.querySelector('.body-height').style.transform='scale(.50)'")
+
+    browser.element('#firstName').type('firstName')
     browser.element('#lastName').type('lastName')
     browser.element('#userEmail').type('test@gmail.com')
     browser.element('[for="gender-radio-2"]').click()
