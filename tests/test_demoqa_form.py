@@ -1,5 +1,8 @@
 from selene import browser, have
 import os
+from os.path import dirname, abspath
+
+path = os.path.join(dirname(dirname(abspath(__file__))), "resources")
 
 
 def test_demoqa_form():
@@ -20,11 +23,11 @@ def test_demoqa_form():
 
     browser.element('#subjectsInput').type('Computer Science').press_enter()
     browser.element('[for="hobbies-checkbox-2"]').click()
-    browser.element('[type=file]').send_keys(os.path.abspath('../resources/_2224643_orig.jpg'))
+    browser.element('[type=file]').send_keys(path + '/_2224643_orig.jpg')
     browser.element('#currentAddress').type('Current Address')
     browser.element('#react-select-3-input').type('raj').press_enter()
     browser.element('#react-select-4-input').type('jai').press_enter()
-    browser.element('#submit').click()
+    browser.element('#submit').press_enter()
 
     browser.element('#example-modal-sizes-title-lg').should(have.text('Thanks for submitting the form'))
     browser.element('.table-responsive').all('tr>td').even.should(have.exact_texts('firstName lastName',
