@@ -37,4 +37,3 @@ def test_demoqa_form():
                                                                                      '_2224643_orig.jpg',
                                                                                      'Current Address',
                                                                                      'Rajasthan Jaipur'))
-    browser.element('#closeLargeModal').click()
