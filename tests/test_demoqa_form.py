@@ -20,7 +20,7 @@ def test_demoqa_form():
 
     browser.element('#subjectsInput').type('Computer Science').press_enter()
     browser.element('[for="hobbies-checkbox-2"]').click()
-    browser.element('[type=file]').send_keys(os.path.abspath('_2224643_orig.jpg'))
+    browser.element('[type=file]').send_keys(os.path.abspath('../resources/_2224643_orig.jpg'))
     browser.element('#currentAddress').type('Current Address')
     browser.element('#react-select-3-input').type('raj').press_enter()
     browser.element('#react-select-4-input').type('jai').press_enter()
